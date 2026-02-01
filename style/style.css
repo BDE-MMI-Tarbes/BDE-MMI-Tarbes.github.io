@@ -144,6 +144,10 @@ canvas {
 
 }
 
+.star.stop-animation {
+    animation-play-state: paused;
+}
+
 @keyframes startAnimation {
     0% {
         width: 300px;
@@ -243,13 +247,14 @@ canvas {
 .card_containers img {
     height: 450px;
     width: auto;
-    border-radius: 20px;
+    display: block;
 }
 
 .flex_card_affiches {
     border: 3px solid var(--secondary);
     border-radius: 20px;
     box-shadow: 10px 5px 5px #20202034;
+    overflow: hidden;
 }
 
 .text_container h3 {

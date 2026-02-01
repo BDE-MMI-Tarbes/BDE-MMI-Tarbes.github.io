@@ -1,3 +1,18 @@
+const star = document.querySelector('.star');
+const aboutSection = document.querySelector('.main__about');
+
+const starObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            star.classList.add('stop-animation');
+        } else {
+            star.classList.remove('stop-animation');
+        }
+    });
+}, { threshold: 0.25 }); 
+
+starObserver.observe(aboutSection);
+
 function loop_div() {
     let loopdivs = document.querySelectorAll(".main__student_container");
     loopdivs[loopdivs.length - 1].style.opacity = '0%';
@@ -77,7 +92,6 @@ let interval = setInterval(() => {
     let datenow = new Date().getTime();
     let difference = finalday - datenow;
 
-    // Time calculations for days, hours, minutes and seconds
     let days = Math.floor(difference / (1000 * 60 * 60 * 24));
     let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
@@ -94,13 +108,13 @@ let interval = setInterval(() => {
     }
 },1000);
 
-// document.addEventListener('contextmenu', (e) => e.preventDefault());
-// document.addEventListener('keydown', (e) => {
-//     if (
-//         e.key === 'F12' || 
-//         (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || 
-//         (e.ctrlKey && e.key === 'U')
-//     ) {
-//         e.preventDefault();
-//     }
-// });
+document.addEventListener('contextmenu', (e) => e.preventDefault());
+document.addEventListener('keydown', (e) => {
+    if (
+        e.key === 'F12' || 
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || 
+        (e.ctrlKey && e.key === 'U')
+    ) {
+        e.preventDefault();
+    }
+});
