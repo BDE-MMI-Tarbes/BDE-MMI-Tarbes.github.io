@@ -1,4 +1,5 @@
 const star = document.querySelector('.star');
+
 const aboutSection = document.querySelector('.main__about');
 
 const starObserver = new IntersectionObserver((entries) => {
@@ -88,25 +89,26 @@ function hide_elements(index) {
 }
 
 // let finalday = new Date("Feb 16, 2026 12:45:00").getTime();
-// let interval = setInterval(() => {
-//     let datenow = new Date().getTime();
-//     let difference = finalday - datenow;
+let finalday = new Date("Feb 9, 2026 12:45:00").getTime();
+let interval = setInterval(() => {
+    let datenow = new Date().getTime();
+    let difference = finalday - datenow;
 
-//     let days = Math.floor(difference / (1000 * 60 * 60 * 24));
-//     let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-//     let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-//     let seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-//     if (seconds < 10) {
-//         document.querySelector('.timer_end').textContent = days + "J " + hours + ":" + minutes + ":0" + seconds;
-//     } else {
-//         document.querySelector('.timer_end').textContent = days + "J " + hours + ":" + minutes + ":" + seconds;
-//     }
+    if (seconds < 10) {
+        document.querySelector('.timer_end').textContent = days + "J " + hours + ":" + minutes + ":0" + seconds;
+    } else {
+        document.querySelector('.timer_end').textContent = days + "J " + hours + ":" + minutes + ":" + seconds;
+    }
 
-//     if (difference < 0) {
-//         document.querySelector('.timer_end').textContent = "élection en cours";
-//     }
-// },1000);
+    if (difference < 0) {
+        document.querySelector('.timer_end').textContent = "à déterminer";
+    }
+},1000);
 
 document.addEventListener('contextmenu', (e) => e.preventDefault());
 document.addEventListener('keydown', (e) => {
@@ -119,3 +121,4 @@ document.addEventListener('keydown', (e) => {
     }
 
 });
+
